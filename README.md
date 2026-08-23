@@ -1,1 +1,105 @@
-# resume
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manoj Kumar Vavitikaluva</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2>MANOJ KUMAR</h2>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+            <p>Hello, I'm</p>
+
+            <h1>MANOJ KUMAR<br>VAVITIKALUVA</h1>
+
+            <h3>Student | Developer | Tech Enthusiast</h3>
+
+            <p>
+                Welcome to my personal portfolio website.
+            </p>
+
+            <a href="#projects" class="button">
+                View My Projects
+            </a>
+        </div>
+
+    </section>
+
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I am Manoj Kumar Vavitikaluva, passionate about technology,
+            programming and web development. I enjoy learning new
+            technologies and building creative projects.
+        </p>
+    </section>
+
+
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skills">
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>JavaScript</div>
+            <div>Python</div>
+            <div>Git & GitHub</div>
+        </div>
+    </section>
+
+
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>My first project description.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>My second project description.</p>
+        </div>
+
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <p>Email: YOUR EMAIL HERE</p>
+        <p>GitHub: YOUR GITHUB HERE</p>
+    </section>
+
+
+    <footer>
+        <p>© 2026 Manoj Kumar Vavitikaluva</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
