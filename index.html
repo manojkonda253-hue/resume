@@ -119,13 +119,13 @@ body{
 <div class="content">
 
 <h1 class="name">
-VAVITIKALUVA <span class="focus">MANOJ KUMAR</span>
+VAVITIKALUVA <span class="focus">MANOJ </span>KUMAR </span>
 </h1>
-
+</br>
 
 <div class="intro">
 
-<h2>Web Developer</h2>
+<h2 style="margin-top: 125px">Web Developer</h2>
 
 <p>
 Hello! I am Manoj Kumar. I create modern and responsive websites
@@ -135,8 +135,8 @@ and building creative projects.
 
 </div>
 
-
-<h2>My Skills</h2>
+</br>
+<h2 style="margin-top: 125px">My Skills</h2>
 
 <div class="skills">
 
@@ -145,9 +145,242 @@ and building creative projects.
 <span>JavaScript</span>
 <span>Python</span>
 <span>GitHub</span>
-<span>SQL</span>
+<span>SQL</span></br>
+
+<h2 style="margin-top:250px;">About Me</h2>
+<div class="About me">
+<p>I want to learn more about web development and programming.</br>
+     I am always looking for new challenges and opportunities 
+     to improve my skills</p>
+   <div; style="margin:10px; "><image src="https://img.magnific.com/free-vector/male-programmer-working-computer-office-wall-with-hanging-reminder-stickers-developer-creating-new-software-interface-coding-programming-system-administrator-designer-character_575670-1159.jpg?semt=ais_hybrid&w=740&q=80" alt="Profile Image" style="width:50%; height:auto; border-radius:20px;"></image></div>  
+</div>
+</div>  
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#020617;
+    color:white;
+    font-family:Arial, sans-serif;
+    overflow-x:hidden;
+}
+
+
+/* Soft mouse light */
+.cursor-light{
+    position:fixed;
+    width:220px;
+    height:220px;
+
+    background:radial-gradient(
+        circle,
+        rgba(56,189,248,0.18),
+        transparent 70%
+    );
+
+    filter:blur(30px);
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+    z-index:0;
+}
+
+
+
+/* Page sections */
+section{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+/* Glass card */
+.card{
+
+    width:380px;
+    padding:50px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(56,189,248,0.5);
+
+    box-shadow:
+    0 0 20px rgba(56,189,248,0.5),
+    inset 0 0 20px rgba(56,189,248,0.1);
+
+
+    opacity:0;
+
+    transform:
+    perspective(800px)
+    scale(0.7)
+    rotateX(60deg);
+
+
+    transition:1s ease;
+
+}
+
+
+
+/* Heading */
+
+.card h1{
+
+    font-size:45px;
+
+    color:#38bdf8;
+
+    margin-bottom:20px;
+
+}
+
+
+.card p{
+
+    font-size:18px;
+
+    color:#cbd5e1;
+
+}
+
+
+
+/* Reveal animation */
+
+.card.show{
+
+    opacity:1;
+
+    transform:
+    perspective(800px)
+    scale(1)
+    rotateX(0deg);
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="cursor-light"></div>
+
+
+
+<section>
+
+<div class="card">
+
+<h1>MANOJ</h1>
+
+<p>Frontend Developer</p>
 
 </div>
+
+</section>
+<section>
+
+<div class="card">
+
+<h1>Core</h1>
+
+<p>
+Java<br>
+c++<br>
+Python
+</p>
+
+</div>
+
+</section>
+<section>
+<div class="card">
+<h1>PROJECTS</h1>
+<p>
+Modern Websites<br>
+Creative UI Designs
+</p>
+
+</div>
+
+</section>
+
+
+
+
+
+<script>
+
+
+// Mouse follows soft light
+
+let light=document.querySelector(".cursor-light");
+
+
+document.addEventListener("mousemove",(e)=>{
+
+light.style.left=e.clientX+"px";
+
+light.style.top=e.clientY+"px";
+
+});
+
+
+
+
+
+// Scroll reveal
+
+let cards=document.querySelectorAll(".card");
+
+
+window.addEventListener("scroll",()=>{
+
+
+cards.forEach(card=>{
+
+
+let position=card.getBoundingClientRect().top;
+
+
+if(position < window.innerHeight-150){
+
+card.classList.add("show");
+
+}
+
+
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+</style>
 
 </div>
 
