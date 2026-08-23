@@ -1,389 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Portfolio</title>
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Manoj kumar vavitikaluva — Creative Developer &amp; Designer</title>
+<meta name="description" content="Portfolio of Vavitikaluva Manoj Kumar, a creative developer and designer specializing in elegant digital experiences, certified in modern web technologies." />
+<meta property="og:title" content="Vavitikaluva Manoj Kumar — Creative Developer &amp; Designer" />
+<meta property="og:description" content="Portfolio of Vavitikaluva Manoj Kumar, a creative developer and designer building elegant digital experiences." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
+:root{
+  --bg:#faf6f0; --card:#fffdfa; --fg:#211d18; --muted:#7b7168;
+  --border:#e7ddd0; --primary:#b5813a; --accent:#f2e7d5;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-    background:black;
-    color:white;
-    min-height:100vh;
-    margin:0;
-    font-family:Arial;
+  background:var(--bg);color:var(--fg);
+  font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
+h1,h2,h3,.serif{font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--primary)}
 
+/* ---------- Light glowing cursor ---------- */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;
+  transform:translate(-50%,-50%);will-change:transform}
+.cursor-dot{width:8px;height:8px;background:#fff8e8;box-shadow:0 0 12px 4px rgba(255,232,180,.9)}
+.cursor-ring{width:42px;height:42px;border:1px solid rgba(181,129,58,.55);
+  background:radial-gradient(circle,rgba(255,240,210,.28),transparent 70%);
+  transition:width .2s,height .2s,background .2s}
+.cursor-ring.hover{width:70px;height:70px;background:radial-gradient(circle,rgba(255,240,210,.45),transparent 70%)}
+@media (max-width:900px){.cursor-dot,.cursor-ring{display:none}}
 
-/* Center Animation */
-.loader{
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:100px;
-    height:100px;
-    border:4px solid #38BDF8;
-    box-shadow:0 0 25px #38BDF8;
-    transform:translate(-50%,-50%);
-    animation:centerBox 2s ease forwards;
-}
+/* ---------- Nav ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:50;padding:22px 0;transition:.3s}
+header.scrolled{padding:12px 0;background:rgba(250,246,240,.85);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px}
+.logo{width:40px;height:40px}
+.links{display:flex;align-items:center;gap:30px}
+.links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s}
+.links a:hover{color:var(--fg)}
+.btn{display:inline-block;border-radius:999px;padding:12px 26px;font-size:14px;font-weight:600;transition:transform .2s,background .2s}
+.btn:hover{transform:scale(1.05)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-ghost{background:var(--card);border:1px solid var(--border)}
+.burger{display:none;background:none;border:0;cursor:pointer}
+.burger span{display:block;height:2px;width:24px;background:var(--fg);margin:5px 0}
+#mobileNav{display:none;background:var(--card);border-bottom:1px solid var(--border);padding:18px 24px}
+#mobileNav a{display:block;padding:10px 0;font-weight:600}
+@media (max-width:860px){.links{display:none}.burger{display:block}}
 
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:120px 24px 80px}
+.hero .glow{position:absolute;border-radius:50%;filter:blur(110px);z-index:-1}
+.g1{width:520px;height:520px;background:rgba(181,129,58,.18);left:50%;top:32%;transform:translate(-50%,-50%)}
+.g2{width:320px;height:320px;background:rgba(242,231,213,.9);right:14%;top:52%}
+.badge{display:inline-block;border:1px solid var(--border);background:var(--card);border-radius:999px;
+  padding:7px 16px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero h1{margin-top:26px;max-width:880px;font-size:clamp(42px,8vw,84px);line-height:1.03}
+.hero h1 em{font-style:italic;color:var(--primary)}
+.hero h1 .p{color:var(--primary)}
+.hero p{margin-top:26px;max-width:560px;font-size:18px;line-height:1.7;color:var(--muted)}
+.cta{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
 
-/* Move animation away and hide */
-@keyframes centerBox{
+section{padding:96px 0}
+.section-head{max-width:620px}
+.section-head h2{margin-top:14px;font-size:clamp(28px,4.4vw,46px);line-height:1.12}
+.section-head p{margin-top:16px;color:var(--muted);font-size:17px;line-height:1.7}
 
-    0%{
-        transform:translate(-50%,-50%) scale(0);
-        opacity:0;
-    }
+/* ---------- About ---------- */
+.about{display:grid;gap:56px;grid-template-columns:1fr 1fr;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;padding-top:34px;border-top:1px solid var(--border)}
+.stats b{display:block;font-size:30px;font-family:Fraunces,serif}
+.stats span{font-size:14px;color:var(--muted)}
+.portrait{aspect-ratio:4/5;border-radius:24px;border:1px solid var(--border);
+  background:linear-gradient(145deg,#f6ead6,#e8d6b8);display:flex;align-items:center;justify-content:center;
+  font-family:Fraunces,serif;font-size:88px;color:rgba(181,129,58,.55)}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
 
-    50%{
-        transform:translate(-50%,-50%) scale(1.5);
-        opacity:1;
-    }
+/* ---------- Skills ---------- */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;margin-top:48px}
+.skill-top{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:10px}
+.skill-top span:last-child{color:var(--primary)}
+.bar{height:6px;background:var(--accent);border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),#dcae63);
+  border-radius:999px;transition:width 1.2s cubic-bezier(.22,1,.36,1)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
+.tag{border:1px solid var(--border);background:var(--card);border-radius:999px;padding:8px 16px;font-size:13px;color:var(--muted)}
+@media (max-width:700px){.skills{grid-template-columns:1fr}}
 
-    100%{
-        transform:translate(-50%,-50%) scale(1);
-        opacity:0;
-    }
-}
+/* ---------- Certificates ---------- */
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:48px}
+.cert{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;
+  transition:transform .25s,box-shadow .25s}
+.cert:hover{transform:translateY(-6px);box-shadow:0 18px 40px -22px rgba(74,52,20,.45)}
+.cert .seal{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;
+  justify-content:center;color:var(--primary);font-weight:700;font-family:Fraunces,serif}
+.cert h3{margin-top:18px;font-size:19px;line-height:1.35}
+.cert .issuer{margin-top:8px;font-size:14px;color:var(--muted)}
+.cert .meta{margin-top:18px;padding-top:14px;border-top:1px dashed var(--border);display:flex;
+  justify-content:space-between;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
+/* ---------- Work ---------- */
+.work{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:48px}
+.card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--card)}
+.card .thumb{aspect-ratio:16/11;background:linear-gradient(135deg,#efe2cc,#d9c19a)}
+.card:nth-child(2) .thumb{background:linear-gradient(135deg,#e7e9ef,#c6ccdb)}
+.card .body{padding:22px;display:flex;justify-content:space-between;align-items:flex-end}
+.card h3{font-size:20px}
+.card small{color:var(--muted)}
+@media (max-width:760px){.work{grid-template-columns:1fr}}
 
-/* Portfolio content */
+/* ---------- Contact ---------- */
+.contact{background:var(--card);border:1px solid var(--border);border-radius:26px;padding:48px;margin-top:20px}
+form{display:grid;gap:16px;margin-top:28px;max-width:560px}
+input,textarea{width:100%;font:inherit;padding:14px 16px;border-radius:12px;border:1px solid var(--border);
+  background:var(--bg);color:var(--fg)}
+input:focus,textarea:focus{outline:2px solid rgba(181,129,58,.4);outline-offset:1px}
+textarea{min-height:130px;resize:vertical}
+footer{border-top:1px solid var(--border);padding:36px 0;color:var(--muted);font-size:14px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
-.content{
-    text-align:center;
-    padding-top:150px;
-    opacity:0;
-    animation:showContent 1.5s ease forwards;
-    animation-delay:2s;
-}
-
-
-.name{
-    font-size:50px;
-}
-
-.focus{
-    color:#38BDF8;
-}
-
-
-.intro{
-    max-width:700px;
-    margin:auto;
-}
-
-.intro p{
-    color:#ccc;
-    font-size:18px;
-}
-
-
-.skills span{
-    display:inline-block;
-    margin:10px;
-    padding:10px 25px;
-    border:2px solid #38BDF8;
-    border-radius:20px;
-    color:#38BDF8;
-}
-
-
-@keyframes showContent{
-
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
 </style>
-
 </head>
-
-
 <body>
 
-
-<!-- First Center Animation -->
-<div class="loader"></div>
-
-
-<!-- After Animation -->
-<div class="content">
-
-<h1 class="name">
-VAVITIKALUVA <span class="focus">MANOJ </span>KUMAR </span>
-</h1>
-</br>
-
-<div class="intro">
-
-<h2 style="margin-top: 125px">Web Developer</h2>
-
-<p>
-Hello! I am Manoj Kumar. I create modern and responsive websites
-using HTML, CSS and JavaScript. I love learning new technologies
-and building creative projects.
-</p>
-
-</div>
-
-</br>
-<h2 style="margin-top: 125px">My Skills</h2>
-
-<div class="skills">
-
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>Python</span>
-<span>GitHub</span>
-<span>SQL</span></br>
-
-<h2 style="margin-top:250px;">About Me</h2>
-<div class="About me">
-<p>I want to learn more about web development and programming.</br>
-     I am always looking for new challenges and opportunities 
-     to improve my skills</p>
-   <div; style="margin:10px; "><image src="https://img.magnific.com/free-vector/male-programmer-working-computer-office-wall-with-hanging-reminder-stickers-developer-creating-new-software-interface-coding-programming-system-administrator-designer-character_575670-1159.jpg?semt=ais_hybrid&w=740&q=80" alt="Profile Image" style="width:50%; height:auto; border-radius:20px;"></image></div>  
-</div>
-</div>  
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    background:#020617;
-    color:white;
-    font-family:Arial, sans-serif;
-    overflow-x:hidden;
-}
-
-
-/* Soft mouse light */
-.cursor-light{
-    position:fixed;
-    width:220px;
-    height:220px;
-
-    background:radial-gradient(
-        circle,
-        rgba(56,189,248,0.18),
-        transparent 70%
-    );
-
-    filter:blur(30px);
-    pointer-events:none;
-
-    transform:translate(-50%,-50%);
-    z-index:0;
-}
-
-
-
-/* Page sections */
-section{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-
-
-/* Glass card */
-.card{
-
-    width:380px;
-    padding:50px;
-
-    text-align:center;
-
-    background:rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(15px);
-
-    border-radius:25px;
-
-    border:1px solid rgba(56,189,248,0.5);
-
-    box-shadow:
-    0 0 20px rgba(56,189,248,0.5),
-    inset 0 0 20px rgba(56,189,248,0.1);
-
-
-    opacity:0;
-
-    transform:
-    perspective(800px)
-    scale(0.7)
-    rotateX(60deg);
-
-
-    transition:1s ease;
-
-}
-
-
-
-/* Heading */
-
-.card h1{
-
-    font-size:45px;
-
-    color:#38bdf8;
-
-    margin-bottom:20px;
-
-}
-
-
-.card p{
-
-    font-size:18px;
-
-    color:#cbd5e1;
-
-}
-
-
-
-/* Reveal animation */
-
-.card.show{
-
-    opacity:1;
-
-    transform:
-    perspective(800px)
-    scale(1)
-    rotateX(0deg);
-
-}
-
-
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="cursor-light"></div>
-
-
-
-<section>
-
-<div class="card">
-
-<h1>MANOJ</h1>
-
-<p>Frontend Developer</p>
-
-</div>
-
-</section>
-<section>
-
-<div class="card">
-
-<h1>Core</h1>
-
-<p>
-Java<br>
-c++<br>
-Python
-</p>
-
-</div>
-
-</section>
-<section>
-<div class="card">
-<h1>PROJECTS</h1>
-<p>
-Modern Websites<br>
-Creative UI Designs
-</p>
-
-</div>
-
+<div class="cursor-ring" id="ring"></div>
+<div class="cursor-dot" id="dot"></div>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#" class="brand" data-hover>
+      <svg class="logo" viewBox="0 0 48 48" fill="none" aria-label="Manoj kumar logo">
+        <circle cx="24" cy="24" r="23" stroke="#b5813a" stroke-width="2"/>
+        <path d="M14 33 24 14l10 19" stroke="#211d18" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18.5 27h11" stroke="#b5813a" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+      <span>Vavitikaluva Manoj kumar</span>
+    </a>
+    <nav class="links">
+      <a href="#about" data-hover>About</a>
+      <a href="#skills" data-hover>Skills</a>
+      <a href="#certificates" data-hover>Certificates</a>
+      <a href="#work" data-hover>Work</a>
+      <a href="#contact" data-hover>Contact</a>
+      <a href="#contact" class="btn btn-primary" data-hover>Hire Me</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobileNav">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#certificates">Certificates</a>
+    <a href="#work">Work</a><a href="#contact">Contact</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <span class="badge">Available for new projects</span>
+  <h1>Crafting digital experiences with <span class="p">prassion</span> &amp <em>consistency</em>.</h1>
+  <p>Creative developer and designer building elegant, performant websites and applications for forward-thinking brands.</p>
+  <div class="cta">
+    <a href="#work" class="btn btn-dark" data-hover>View My Work</a>
+    <a href="#contact" class="btn btn-ghost" data-hover>Get in Touch</a>
+  </div>
 </section>
 
+<section id="about"><div class="wrap about reveal">
+  <div>
+    <span class="eyebrow">About Me</span>
+    <h2 style="margin-top:14px;font-size:clamp(28px,4.4vw,46px);line-height:1.12">A designer who codes, and a developer who cares about details.</h2>
+    <p style="margin-top:20px;color:var(--muted);font-size:17px;line-height:1.7">With over 2 months of experience, I bridge the gap between design and engineering. The best digital products are born at the intersection of clarity, beauty and performance.</p>
+    <div class="stats">
+      <div><b>1+</b><span>Month Experience</span></div>
+      <div><b>1+</b><span>Projects Delivered</span></div>
+      <div><b>1+</b><span>Happy Clients</span></div>
+    </div>
+  </div>
+  <div class="portrait">MK</div>
+</div></section>
 
+<section id="skills"><div class="wrap reveal">
+  <div class="section-head">
+    <span class="eyebrow">Skills</span>
+    <h2>Tools and technologies I use every day.</h2>
+  </div>
+  <div class="skills" id="skillList"></div>
+  <div class="tags">
+    <span class="tag">JavaScript</span><span class="tag">GraphQL</span><span class="tag">Framer Motion</span>
+    <span class="tag">PostgreSQL</span><span class="tag">Design Systems</span><span class="tag">Accessibility</span>
+    <span class="tag">Webflow</span><span class="tag">Git</span><span class="tag">Prototyping</span>
+  </div>
+</div></section>
 
+<section id="certificates"><div class="wrap reveal">
+  <div class="section-head">
+    <span class="eyebrow">Certificates</span>
+    <h2>Verified developer &amp; continuous learning.</h2>
+  </div>
+  <div class="certs" id="certList"></div>
+</div></section>
 
+<section id="work"><div class="wrap reveal">
+  <div class="section-head">
+    <span class="eyebrow">Selected Work</span>
+    <h2>Recent projects I am proud of.</h2>
+  </div>
+  <div class="work">
+    <article class="card" data-hover>
+      <div class="thumb"></div>
+      <div class="body"><div><h3>Haven Workspace</h3><small>Brand &amp; Web Design</small></div><small>2024</small></div>
+    </article>
+    <article class="card" data-hover>
+      <div class="thumb"></div>
+      <div class="body"><div><h3>Nova Analytics</h3><small>Dashboard &amp; Product Design</small></div><small>2023</small></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap reveal">
+  <div class="contact">
+    <span class="eyebrow">Contact</span>
+    <h2 style="margin-top:14px;font-size:clamp(28px,4.4vw,42px)">Let's build something worth remembering.</h2>
+    <p style="margin-top:14px;color:var(--muted)">Tell me about your project — I usually reply within 24 hours.</p>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Vavitikaluva Manoj Kumar" required />
+      <input type="email" name="email" placeholder="Manojkumar9949974479@gmail.com" required />
+      <textarea name="message" placeholder="review" project required></textarea>
+      <button type="submit" class="btn btn-primary" data-hover style="justify-self:start;border:0;cursor:pointer">Manoj</button>
+      <p id="formNote" style="color:var(--primary);font-weight:600;display:none">Thanks! Your message has been sent.</p>
+    </form>
+  </div>
+  <footer>
+    <span>© <span id="year"></span> Vavitikaluva Manoj. All rights reserved.</span>
+    <span>manojkumar994997@gmail.com</span>
+  </footer>
+</div></section>
 
 <script>
-
-
-// Mouse follows soft light
-
-let light=document.querySelector(".cursor-light");
-
-
-document.addEventListener("mousemove",(e)=>{
-
-light.style.left=e.clientX+"px";
-
-light.style.top=e.clientY+"px";
-
+/* Light glowing cursor */
+const dot=document.getElementById('dot'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;});
+(function loop(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;
+  ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
+document.querySelectorAll('[data-hover],a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>ring.classList.add('hover'));
+  el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));
 });
 
+/* Sticky header + mobile menu */
+addEventListener('scroll',()=>document.getElementById('header').classList.toggle('scrolled',scrollY>40));
+const mob=document.getElementById('mobileNav');
+document.getElementById('burger').onclick=()=>mob.style.display=mob.style.display==='block'?'none':'block';
+mob.querySelectorAll('a').forEach(a=>a.onclick=()=>mob.style.display='none');
 
+/* Skills */
+const skills=[["HTML ",95],["UI/UX Design",90],["CSS",88],["REACT",20],["Node.js",40],["Figma",30]];
+document.getElementById('skillList').innerHTML=skills.map(([n,l])=>
+  `<div><div class="skill-top"><span>${n}</span><span>${l}%</span></div><div class="bar"><i data-level="${l}"></i></div></div>`).join('');
 
+/* Certificates */
+const certs=[
+ ["data anlyst","Meta","2023","MFD-8842"],
+ ["Google UX Design Specialization","Google","2022","GUX-2190"],
+ ["AWS Certified Cloud Practitioner","Amazon Web Services","2024","AWS-CP-5591"],
+ ["TATA","Frontend Masters","2023","FRM-7721"]];
+document.getElementById('certList').innerHTML=certs.map(([t,i,y,id])=>
+  `<article class="cert" data-hover><div class="seal">✦</div><h3>${t}</h3>
+   <div class="issuer">${i}</div><div class="meta"><span>${y}</span><span>ID ${id}</span></div></article>`).join('');
 
+/* Reveal + animate bars */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+  e.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.level+'%');io.unobserve(e.target);}}),{threshold:.2});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// Scroll reveal
-
-let cards=document.querySelectorAll(".card");
-
-
-window.addEventListener("scroll",()=>{
-
-
-cards.forEach(card=>{
-
-
-let position=card.getBoundingClientRect().top;
-
-
-if(position < window.innerHeight-150){
-
-card.classList.add("show");
-
-}
-
-
-});
-
-
-});
-
-
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();e.target.reset();document.getElementById('formNote').style.display='block';});
 </script>
-
-
-</body>
-</style>
-
-</div>
-
-
 </body>
 </html>
