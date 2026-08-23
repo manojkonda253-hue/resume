@@ -9,27 +9,41 @@
  style="background-color:black";> <h1 class="typing">MANOJ KUMAR </H1>
 <style>
 body{
-    background:black;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .typing{
-    color:white;
-    font-size:60px;
-    white-space:nowrap;
-    overflow:hidden;
-    border-right:3px solid #38BDF8;
-    width:0;
-    margin:auto;
-    animation: typing 10s steps(20) forwards, blink .20s infinite;
+    color: #38BDF8;
+    font-size: 50px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: 0;
+    animation:
+        typing 5s steps(25, end) forwards,
+        blink 0.8s step-end infinite;
 }
 
 @keyframes typing{
-    from{width: 25px;;}
-    to{width:12ch;}
+    from{
+        width: 0;
+    }
+    to{
+        width: 25ch;
+    }
 }
 
 @keyframes blink{
-    50%{border-color:transparent;}
+    50%{
+        border-color: transparent;
+    }
 }
 </style>
  <header>
