@@ -6,19 +6,32 @@
  <title>MANOJ KUMAR VAVITIKALUVA</title>
 <link rel="stylesheet" href="style.css">
 </head><body 
- style="background-color:black" ;><H1 class= {    color:#38BDF8;
-    font-size:60px;
-    animation: float 2s ease-in-out infinite;
- }
+ style="background-color:black";> <h1 class="typing">VAVITIKALUVA MANOJ KUMAR </H1>
+<style>
+body{
+    background:black;
+}
 
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
-} >VAVITIKALUVA MANOJ KUMAR </H1>
+.typing{
+    color:white;
+    font-size:60px;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right:3px solid #38BDF8;
+    width:0;
+    margin:auto;
+    animation: typing 4s steps(12) forwards, blink .8s infinite;
+}
+
+@keyframes typing{
+    from{width:0;}
+    to{width:12ch;}
+}
+
+@keyframes blink{
+    50%{border-color:transparent;}
+}
+</style>
  <header>
         <nav>
             
