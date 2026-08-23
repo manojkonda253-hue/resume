@@ -1,113 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>MANOJ KUMAR VAVITIKALUVA</title>
-<link rel="stylesheet" href="style.css">
-</head><body 
- style="background-color:black";> <h1 class="typing">MANOJ KUMAR </H1>
+<title>Portfolio</title>
+
 <style>
+
 body{
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    background:black;
+    color:white;
+    min-height:100vh;
+    margin:0;
+    font-family:Arial;
 }
 
-.typing{
-    color: #38BDF8;
-    font-size: 50px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid white;
-    width: 0;
-    animation:
-        typing 5s steps(25, end) forwards,
-        blink 0.8s step-end infinite;
+
+/* Center Animation */
+.loader{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100px;
+    height:100px;
+    border:4px solid #38BDF8;
+    box-shadow:0 0 25px #38BDF8;
+    transform:translate(-50%,-50%);
+    animation:centerBox 2s ease forwards;
 }
 
-@keyframes typing{
-    from{
-        width: 0;
+
+/* Move animation away and hide */
+@keyframes centerBox{
+
+    0%{
+        transform:translate(-50%,-50%) scale(0);
+        opacity:0;
     }
-    to{
-        width: 25ch;
-    }
-}
 
-@keyframes blink{
     50%{
-        border-color: transparent;
+        transform:translate(-50%,-50%) scale(1.5);
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+        opacity:0;
     }
 }
+
+
+/* Portfolio content */
+
+.content{
+    text-align:center;
+    padding-top:150px;
+    opacity:0;
+    animation:showContent 1.5s ease forwards;
+    animation-delay:2s;
+}
+
+
+.name{
+    font-size:50px;
+}
+
+.focus{
+    color:#38BDF8;
+}
+
+
+.intro{
+    max-width:700px;
+    margin:auto;
+}
+
+.intro p{
+    color:#ccc;
+    font-size:18px;
+}
+
+
+.skills span{
+    display:inline-block;
+    margin:10px;
+    padding:10px 25px;
+    border:2px solid #38BDF8;
+    border-radius:20px;
+    color:#38BDF8;
+}
+
+
+@keyframes showContent{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
 </style>
- <header>
-        <nav>
-            
- <div class="nav-links" style="color:whitesmoke">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
- <section id="home" class="hero">
- <div class="hero-text">
-<p>Hello, I'm</p>
-  <h1 style="color: whitesmoke;">MANOJ KUMAR<br>VAVITIKALUVA</h1>
- <h3>Student | Developer | Tech Enthusiast</h3>
- <p>
-                Welcome to my personal portfolio website.
-            </p>
- <a href="#projects" class="button">
-                View My Projects
-            </a>
-        </div>
- </section>
- <section id="about">
-        <h2 style="color:whitesmoke;">About Me</h2>
- <p style="color: #BFDBFE;">
-            I am Manoj Kumar Vavitikaluva, passionate about technology,
-            programming and web development. I enjoy learning new
-            technologies and building creative projects.
-        </p>
-    </section>
-  <section id="skills">
-        <h2 style="color: gold;">My Skills</h2>
-  <div class="skills" style="color: whitesmoke;">
-            <div>HTML</div>
-            <div>CSS</div>
-            <div>JavaScript</div>
-            <div>Python</div>
-            <div>Git & GitHub</div>
-        </div>
-    </section>
- <section id="projects">
-        <h2 style="color: gold;">My Projects</h2>
- <div class="project-card">
-            <h3 style="color: gold;">Project 1</h3>
-            <p style="color: #BFDBFE;">My first project description.</p>
-        </div>
-  <div class="project-card">
-            <h3>Project 2</h3>
-            <p style="color: #BFDBFE;">My second project description.</p>
-        </div>
-</section>
- <section id="contact">
-        <h2 style="color: goldenrod(243, 255, 80);">Contact Me</h2>
- <p style="color:color(from color srgb r g b);">Email: manojkumar994997@gmail.com</p>
-        <p style="color: color(from color srgb r g b);">GitHub: YOUR GITHUB HERE</p>
-    </section>
-<footer>
-        <p style="color:gold;">© 2026 Manoj Kumar Vavitikaluva</p>
-    </footer>
- <script src="script.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- First Center Animation -->
+<div class="loader"></div>
+
+
+<!-- After Animation -->
+<div class="content">
+
+<h1 class="name">
+VAVITIKALUVA <span class="focus">MANOJ KUMAR</span>
+</h1>
+
+
+<div class="intro">
+
+<h2>Web Developer</h2>
+
+<p>
+Hello! I am Manoj Kumar. I create modern and responsive websites
+using HTML, CSS and JavaScript. I love learning new technologies
+and building creative projects.
+</p>
+
+</div>
+
+
+<h2>My Skills</h2>
+
+<div class="skills">
+
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Python</span>
+<span>GitHub</span>
+<span>SQL</span>
+
+</div>
+
+</div>
+
+
 </body>
 </html>
