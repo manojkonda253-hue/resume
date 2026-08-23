@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manoj Kumar Vavitikaluva</title>
+    <title>MANOJ KUMAR VAVITIKALUVA</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body style="background-color=black";>
 
     <header>
         <nav>
-            <h2>MANOJ KUMAR</h2>
+            <h1 style="color=orange";>MANOJ KUMAR VAVITIKALUVA</h1>
 
             <div class="nav-links">
                 <a href="#home">Home</a>
